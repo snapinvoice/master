@@ -1,4 +1,12 @@
-var menu = [
+var myApp = angular.module('menu',[]);
+
+myApp.controller('menuCtrl', ['$scope', function($scope) {
+    $scope.dashTitle = {
+        name: "SnapInvoice",
+        link: "#"
+    };
+
+    $scope.menu = [
     {
         id: "dashboard",
         name: "Dashboard",
@@ -37,3 +45,5 @@ var menu = [
         link: "logout/logout.html"
     },
 ];
+
+}]);
