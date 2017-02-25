@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SnapInvoice</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../assets/css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body ng-app="myApp">
+
+    <div id="wrapper">
+
+        <div id="sidebar-wrapper" ng-controller="menuCtrl">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="{{title.link}}">
+                        {{dashTitle.name}}
+                    </a>
+                </li>
+                <li class="dropdown" ng-repeat="m in menu">
+                    <a data-toggle="dropdown" href="{{m.link}}">{{m.name}}</a>
+                    <ul ng-show="m.rows">
+                    <li ng-repeat="row in m.rows">
+                        <a href="{{row.link}}">{{row.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                <div class="jumbotron text-center">
+                     <h1 class="">Hello Beautiful!</h1>
+
+                    <p class="">This is a sidebar navigation responsive template built off of Bootstrap
+                        3.0 and simple sidebar template. It includes anchors, scroll spy, smooth
+                        scroll, and Awesome icon fonts.</p>
+                    <p class=""><a class="btn btn-default">Click On Me!</a>
+ <a class="btn btn-info">Tweet Me!</a>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    
+    <script src="../../assets/js/angular.min.js"></script>
+    <script src="homeCtrl.js"></script>
+    <script src="../../menu.js"></script>
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SnapInvoice</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/simple-sidebar.css" rel="stylesheet">
+    <script src="../../assets/js/angular.min.js"></script>
+    <script src="anagraficaCtrl.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="sidebar-wrapper" ng-app="menu" ng-controller="menuCtrl">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="{{title.link}}">
+                        {{dashTitle.name}}
+                    </a>
+                </li>
+                <li class="dropdown" ng-repeat="m in menu">
+                    <a data-toggle="dropdown" href="{{m.link}}">{{m.name}}</a>
+                    <ul ng-show="m.rows">
+                    <li ng-repeat="row in m.rows">
+                        <a href="{{row.link}}">{{row.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" ng-app="anagrafica" ng-controller="anagraficaCtrl">
+            <div class="container-fluid">
+                <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Users</h3>
+            </div>
+            <table class="table">
+                <thead>
+                        <th>Codice Cliente</th>
+                        <th>Ragione Sociale</th>
+                        <th>Codice Fiscale</th>
+                        <th>Telefono</th>
+                        <th></th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="c in clienti">
+                        <td ng-bind="c.idAnagrafica"></td>
+                        <td>{{c.RagSoc}}</td>
+                        <td>{{c.CodFis}}</td>
+                        <td>{{c.Telefono}}</td>
+                        <td><button class="btn btn-xs">Modifica</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../menu.js"></script>
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
